@@ -1,0 +1,13 @@
+1. Search Recipes:
+GET /recipes/complexSearch
+Parameters: query, cuisine, diet, intolerances, number
+
+2. Get Recipe Information:
+GET /recipes/{id}/information
+Parameters: includeNutrition=true
+
+3. Get Recipe Nutrition:
+GET /recipes/{id}/nutritionWidget.json
+
+4. Get Recipe Instructions:
+GET /recipes/{id}/analyzedInstructions
