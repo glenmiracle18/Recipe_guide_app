@@ -3,12 +3,13 @@ import 'package:http/http.dart' as http;
 import '../models/recipe.dart'; // Import the Recipe class
 import '../models/recipe-details.dart';
 import '../models/nutrition.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 
 class SpoonacularService {
-  final String apiKey =
-      '1000c9f4eae3458a9aaeb33bbdcaeac1'; // Replace with your API key
-  final String baseUrl = 'https://api.spoonacular.com/recipes';
 
+  String apiKey = dotenv.get('API_KEY');
+  String baseUrl = dotenv.get('BASE_URL');
   Future<List<Recipe>> searchRecipes(String query) async {
     final response = await http.get(
       Uri.parse(
